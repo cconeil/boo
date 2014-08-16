@@ -19,6 +19,9 @@
 		9D820954199D7DE700906E81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82093C199D7DE700906E81 /* UIKit.framework */; };
 		9D82095C199D7DE700906E81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D82095A199D7DE700906E81 /* InfoPlist.strings */; };
 		9D82095E199D7DE700906E81 /* BooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82095D199D7DE700906E81 /* BooTests.m */; };
+		9D820969199D7E0E00906E81 /* BCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D820968199D7E0E00906E81 /* BCLaunchViewController.m */; };
+		9D82096C199D7E1C00906E81 /* BCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82096B199D7E1C00906E81 /* BCHomeViewController.m */; };
+		9D820970199ECDE600906E81 /* BCLaunchTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82096F199ECDE600906E81 /* BCLaunchTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		9D820959199D7DE700906E81 /* BooTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BooTests-Info.plist"; sourceTree = "<group>"; };
 		9D82095B199D7DE700906E81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D82095D199D7DE700906E81 /* BooTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooTests.m; sourceTree = "<group>"; };
+		9D820967199D7E0E00906E81 /* BCLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCLaunchViewController.h; sourceTree = "<group>"; };
+		9D820968199D7E0E00906E81 /* BCLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCLaunchViewController.m; sourceTree = "<group>"; };
+		9D82096A199D7E1C00906E81 /* BCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCHomeViewController.h; sourceTree = "<group>"; };
+		9D82096B199D7E1C00906E81 /* BCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCHomeViewController.m; sourceTree = "<group>"; };
+		9D82096E199ECDE600906E81 /* BCLaunchTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCLaunchTransition.h; sourceTree = "<group>"; };
+		9D82096F199ECDE600906E81 /* BCLaunchTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCLaunchTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,7 @@
 			children = (
 				9D820947199D7DE700906E81 /* BCAppDelegate.h */,
 				9D820948199D7DE700906E81 /* BCAppDelegate.m */,
+				9D82096D199D847B00906E81 /* ViewControllers */,
 				9D82094A199D7DE700906E81 /* Images.xcassets */,
 				9D82093F199D7DE700906E81 /* Supporting Files */,
 			);
@@ -142,6 +152,19 @@
 				9D82095A199D7DE700906E81 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D82096D199D847B00906E81 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D820967199D7E0E00906E81 /* BCLaunchViewController.h */,
+				9D820968199D7E0E00906E81 /* BCLaunchViewController.m */,
+				9D82096A199D7E1C00906E81 /* BCHomeViewController.h */,
+				9D82096B199D7E1C00906E81 /* BCHomeViewController.m */,
+				9D82096E199ECDE600906E81 /* BCLaunchTransition.h */,
+				9D82096F199ECDE600906E81 /* BCLaunchTransition.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D820969199D7E0E00906E81 /* BCLaunchViewController.m in Sources */,
 				9D820945199D7DE700906E81 /* main.m in Sources */,
+				9D82096C199D7E1C00906E81 /* BCHomeViewController.m in Sources */,
+				9D820970199ECDE600906E81 /* BCLaunchTransition.m in Sources */,
 				9D820949199D7DE700906E81 /* BCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
