@@ -7,6 +7,7 @@
 //
 
 #import "BCLaunchViewController.h"
+#import "BCHomeViewController.h"
 
 @interface BCLaunchViewController ()
 @end
@@ -17,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pop:) name:BCHomeViewControllerDidLaunchCameraNotification object:nil];
     }
     return self;
 }
@@ -36,12 +37,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self.navigationController popViewControllerAnimated:YES];
 }
  
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)pop:(NSNotification *)notification {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BCHomeViewControllerDidLaunchCameraNotification object:nil];
 }
 
 @end

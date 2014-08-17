@@ -45,14 +45,15 @@ static const CGFloat kEnlargeScale = 20.0 / kShrinkScale;
     NSAssert([fromViewController isKindOfClass:[BCLaunchViewController class]], @"This transition must pop from a BCLaunchViewController");
 
     [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
+    fromViewController.view.backgroundColor = [UIColor clearColor];
     toViewController.view.alpha = 0.0;
 
     [UIView animateWithDuration:kTransitionShrinkAnimationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        toViewController.view.alpha = 1.0;
         fromViewController.view.transform = CGAffineTransformMakeScale(kShrinkScale, kShrinkScale);
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:kTransitionEnlargeAnimationDuration delay:0.075 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             fromViewController.view.transform = CGAffineTransformMakeScale(kEnlargeScale, kEnlargeScale);
-            toViewController.view.alpha = 1.0;
             fromViewController.view.alpha = 0.0;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];

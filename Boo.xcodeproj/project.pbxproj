@@ -22,6 +22,7 @@
 		9D820969199D7E0E00906E81 /* BCLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D820968199D7E0E00906E81 /* BCLaunchViewController.m */; };
 		9D82096C199D7E1C00906E81 /* BCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82096B199D7E1C00906E81 /* BCHomeViewController.m */; };
 		9D820970199ECDE600906E81 /* BCLaunchTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82096F199ECDE600906E81 /* BCLaunchTransition.m */; };
+		9D82097419A0453C00906E81 /* BCCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82097319A0453C00906E81 /* BCCameraPreviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		9D82096B199D7E1C00906E81 /* BCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCHomeViewController.m; sourceTree = "<group>"; };
 		9D82096E199ECDE600906E81 /* BCLaunchTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCLaunchTransition.h; sourceTree = "<group>"; };
 		9D82096F199ECDE600906E81 /* BCLaunchTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCLaunchTransition.m; sourceTree = "<group>"; };
+		9D82097219A0453C00906E81 /* BCCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCCameraPreviewView.h; sourceTree = "<group>"; };
+		9D82097319A0453C00906E81 /* BCCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCCameraPreviewView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 			children = (
 				9D820947199D7DE700906E81 /* BCAppDelegate.h */,
 				9D820948199D7DE700906E81 /* BCAppDelegate.m */,
+				9D82097119A0452200906E81 /* Views */,
 				9D82096D199D847B00906E81 /* ViewControllers */,
 				9D82094A199D7DE700906E81 /* Images.xcassets */,
 				9D82093F199D7DE700906E81 /* Supporting Files */,
@@ -165,6 +169,15 @@
 				9D82096F199ECDE600906E81 /* BCLaunchTransition.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9D82097119A0452200906E81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D82097219A0453C00906E81 /* BCCameraPreviewView.h */,
+				9D82097319A0453C00906E81 /* BCCameraPreviewView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +281,7 @@
 				9D82096C199D7E1C00906E81 /* BCHomeViewController.m in Sources */,
 				9D820970199ECDE600906E81 /* BCLaunchTransition.m in Sources */,
 				9D820949199D7DE700906E81 /* BCAppDelegate.m in Sources */,
+				9D82097419A0453C00906E81 /* BCCameraPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

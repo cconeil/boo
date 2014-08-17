@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const BCHomeViewControllerDidLaunchCameraNotification;
+
 @interface BCHomeViewController : UIViewController
 
 + (instancetype)homeViewController;
