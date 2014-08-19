@@ -13,15 +13,12 @@
 NSString * const BCHomeViewControllerDidLaunchCameraNotification = @"BCHomeViewControllerDidLaunchCameraNotification";
 
 @interface BCHomeViewController ()
-@property (nonatomic, strong) UIImageView *backgroundImageView;
 
 @property (nonatomic, strong) BCCameraPreviewView *previewView;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) dispatch_queue_t sessionQueue;
 @property (nonatomic, assign) BOOL deviceAuthorized;
-
-@property (nonatomic) UIBackgroundTaskIdentifier backgroundRecordingID;
 
 @end
 
@@ -43,12 +40,8 @@ NSString * const BCHomeViewControllerDidLaunchCameraNotification = @"BCHomeViewC
         self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
 
         dispatch_async(self.sessionQueue, ^{
-            [self setBackgroundRecordingID:UIBackgroundTaskInvalid];
-
-            NSError *error = nil;
-
             AVCaptureDevice *videoDevice = [BCHomeViewController deviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionFront];
-            AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
+            AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:nil];
 
             if ([self.captureSession canAddInput:videoDeviceInput]) {
                 [self.captureSession addInput:videoDeviceInput];
@@ -74,7 +67,8 @@ NSString * const BCHomeViewControllerDidLaunchCameraNotification = @"BCHomeViewC
     self.previewView.session = self.captureSession;
 }
 
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)prefersStatusBarHidden
+{
     return YES;
 }
 

@@ -12,23 +12,20 @@
 
 static const CGFloat kTransitionShrinkAnimationDuration = 0.2;
 static const CGFloat kTransitionEnlargeAnimationDuration = 0.45;
+static const CGFloat kTransitionDuration = kTransitionShrinkAnimationDuration + kTransitionEnlargeAnimationDuration;
 static const CGFloat kShrinkScale = 0.925;
 static const CGFloat kEnlargeScale = 20.0 / kShrinkScale;
 
 @implementation BCLaunchTransition
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    if (self.isPresenting) {
-        return self.presentationDuration;
-    } else {
-        return self.dismissalDuration;
-    }
+    return kTransitionDuration;
 }
 
 #pragma mark - transitions
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     if(self.isPresenting) {
-        [self present:transitionContext];
+        [self present:transitionContext]; // This particular transition does not support a presentation animation
     } else {
         [self dismiss:transitionContext];
     }

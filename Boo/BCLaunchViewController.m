@@ -35,15 +35,18 @@
     [self.view addSubview:self.backgroundImageView];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
 }
  
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)prefersStatusBarHidden
+{
     return YES;
 }
 
-- (void)pop:(NSNotification *)notification {
+- (void)pop:(NSNotification *)notification
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 

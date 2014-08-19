@@ -10,8 +10,6 @@
 
 @interface BCLaunchTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, assign) NSTimeInterval presentationDuration;
-@property (nonatomic, assign) NSTimeInterval dismissalDuration;
 @property (nonatomic, assign, getter = isPresenting) BOOL presenting;
 
 @end

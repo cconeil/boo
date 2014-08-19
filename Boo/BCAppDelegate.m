@@ -29,10 +29,13 @@
 
     // Add the Launch View Controller to Pop with a fancy animation
     BCLaunchViewController *launchViewController = [[BCLaunchViewController alloc] initWithNibName:nil bundle:nil];
-    launchViewController.transitionController = [[BCLaunchTransition alloc] init];
-    [self.rootNavigationController pushViewController:launchViewController animated:NO];
+    BCLaunchTransition *launchTransition = [[BCLaunchTransition alloc] init];
+    launchTransition.presenting = NO;
+    launchViewController.transitionController = launchTransition;
 
+    [self.rootNavigationController pushViewController:launchViewController animated:NO];
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -64,7 +67,8 @@
 }
 
 #pragma mark - UINavigationControllerDelegate
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
     if (operation == UINavigationControllerOperationPop && [fromVC respondsToSelector:@selector(transitionController)]) {
         return ((BCLaunchViewController *)fromVC).transitionController;
     }
